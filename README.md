@@ -1,1 +1,5 @@
-# Organ-Segmentation-using-Hounsfield-scale
+# Organ Segmentation using Hounsfield scale
+
+This repository contains a project that allows us to load medical images and recognize organs segmented in an image.
+
+The project is stored under the form a folder with 4 input folders that have the input images and various other images that are obtained from, processed and modified. The code is contained within the notebook maiSO.ipynb. The program is reading the input from two .in files, converting them both to grayscale images using Min-Max Scaling, identifying certain cells that belong to certain organs, specifically the lungs we are trying to detected in the DICOM CT images. After identifiying the number of cells that might belong to a lung near the lung segmentation provided by the doctor, I overlay those cells with the segmentaiton provided by the doctor, then I perform a custom K Nearest Neighbor algorithm that is performing clusterization using the nearest pixels in slides of dimensions of 9,25,49,81,121,169,225 and 289 pixels where if half of the pixels belong to the organ, then that pixel in the center of the slide should belong also to the lung. The segmentation done by my algorithm can be found in the "compare3.png" file in every input folder.
