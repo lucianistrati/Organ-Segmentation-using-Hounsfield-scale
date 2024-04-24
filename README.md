@@ -1,5 +1,48 @@
-# Organ Segmentation using Hounsfield scale
+# Organ Segmentation using Hounsfield Scale
 
-This repository contains a project that allows us to load medical images and recognize organs segmented in an image.
+This repository contains a project focused on organ segmentation in medical images using the Hounsfield scale.
 
-The project is stored under the form a folder with 4 input folders that have the input images and various other images that are obtained from, processed and modified. The code is contained within the notebook maiSO.ipynb. The program is reading the input from two .in files, converting them both to grayscale images using Min-Max Scaling, identifying certain cells that belong to certain organs, specifically the lungs we are trying to detected in the DICOM CT images. After identifiying the number of cells that might belong to a lung near the lung segmentation provided by the doctor, I overlay those cells with the segmentaiton provided by the doctor, then I perform a custom K Nearest Neighbor algorithm that is performing clusterization using the nearest pixels in slides of dimensions of 9, 25, 49, 81, 121, 169, 225 and 289 pixels where if half of the pixels belong to the organ, then that pixel in the center of the slide should belong also to the lung. The segmentation done by my algorithm can be found in the "compare3.png" file in every input folder.
+## Project Overview
+
+The project is organized into a folder structure containing input images and various processed images. The main code is implemented in the notebook `main.ipynb`. The program reads input from two `.in` files and converts them to grayscale images using Min-Max Scaling. It then identifies cells corresponding to specific organs, with a focus on detecting lungs in DICOM CT images. 
+
+## Functionality
+
+1. **Input Data Processing**: The program preprocesses the input images, converting them to grayscale and scaling them using Min-Max Scaling.
+   
+2. **Lung Segmentation**: It identifies cells that may belong to a lung near the lung segmentation provided by medical professionals.
+
+3. **Overlay with Ground Truth**: The identified lung cells are overlaid with the segmentation provided by medical experts.
+
+4. **Custom K Nearest Neighbor Algorithm**: A custom K Nearest Neighbor algorithm is applied for clusterization. It uses the nearest pixels in slides of various dimensions to determine if a pixel belongs to the lung based on the majority vote of its neighbors.
+
+5. **Segmentation Visualization**: The segmentation results produced by the algorithm are saved in the "compare3.png" file within each input folder.
+
+## Folder Structure
+
+The folder structure is organized as follows:
+
+- `input/`: Contains input images.
+- `processed/`: Contains processed images.
+- `output/`: Contains segmentation results and other output images.
+- `notebooks/`: Contains the notebook `main.ipynb` which contains the main code.
+
+## Usage
+
+1. Clone the repository to your local machine.
+   
+2. Open and run the `main.ipynb` notebook using Jupyter or any compatible environment.
+
+3. The notebook will process the input images, perform organ segmentation, and generate segmentation results.
+
+## Requirements
+
+The project requires the following dependencies:
+
+- Python 3.x
+- Jupyter Notebook
+- `numpy`
+- `matplotlib`
+- `scikit-image`
+
+Install the dependencies using `pip` or any package manager before running the notebook.
