@@ -46,6 +46,3 @@ The project requires the following dependencies:
 - `scikit-image`
 
 Install the dependencies using `pip` or any package manager before running the notebook.
-
-
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
